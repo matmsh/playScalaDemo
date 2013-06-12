@@ -1,0 +1,100 @@
+01-035.199.popsite.net,United States,2007-05-05 04:59:49.889,Internet Explorer,Windows
+015-974-121.area7.spcsdns.net,United States,2006-09-29 04:13:58.051,Internet Explorer,Windows
+028sandiford119.campus.mcgill.ca,Canada,2006-06-27 00:55:31.478,Internet Explorer,Windows
+059149029097.ctinets.com,Hong Kong,2006-11-02 17:15:09.49,Internet Explorer,Windows
+059149029097.ctinets.com,Hong Kong,2006-11-02 17:15:54.632,Internet Explorer,Windows
+059149033249.ctinets.com,Hong Kong,2006-12-18 00:57:11.057,Internet Explorer,Windows
+059149033249.ctinets.com,Hong Kong,2006-12-18 01:00:01.03,Internet Explorer,Windows
+059149125028.ctinets.com,Hong Kong,2006-10-09 16:11:17.452,Internet Explorer,Windows
+062016156155.customer.alfanett.no,Norway,2006-03-17 06:25:17.806,Internet Explorer,Windows
+062016234217.customer.alfanett.no,Norway,2007-01-07 11:31:52.395,Internet Explorer,Windows
+062016234217.customer.alfanett.no,Norway,2007-01-07 13:29:29.145,Internet Explorer,Windows
+062016234217.customer.alfanett.no,Norway,2007-01-07 16:33:22.584,Internet Explorer,Windows
+074229211203user.viplt.ne.jp,Japan,2007-02-11 12:52:24.399,Internet Explorer,Windows
+07Walroth-LE68a.mid4.usna.edu,United States,2006-11-01 12:17:27.869,Internet Explorer,Windows
+082-146-096-086.dyn.adsl.xs4all.be,Belgium,2005-12-16 02:51:47.215,Firefox,Windows
+082-146-096-086.dyn.adsl.xs4all.be,Belgium,2005-12-16 03:13:17.554,Firefox,Windows
+082-146-096-179.dyn.adsl.xs4all.be,Belgium,2006-03-18 02:31:08.348,Firefox,Windows
+082-146-096-179.dyn.adsl.xs4all.be,Belgium,2006-03-18 02:31:09.155,Firefox,Windows
+082-146-096-179.dyn.adsl.xs4all.be,Belgium,2006-03-18 03:06:14.502,Firefox,Windows
+084202158189.customer.alfanett.no,Norway,2007-01-06 21:13:28.715,Internet Explorer,Windows
+084202158200.customer.alfanett.no,Norway,2007-06-06 21:39:52.741,Internet Explorer,Windows
+084202158200.customer.alfanett.no,Norway,2007-06-07 22:13:59.544,Internet Explorer,Windows
+084202158216.customer.alfanett.no,Norway,2007-04-26 22:33:05.788,Internet Explorer,Windows
+084202159009.customer.alfanett.no,Norway,2007-05-20 18:39:32.778,Internet Explorer,Windows
+084202159009.customer.alfanett.no,Norway,2007-05-20 21:45:50.428,Internet Explorer,Windows
+084202159066.customer.alfanett.no,Norway,2007-01-01 12:30:20.766,Internet Explorer,Windows
+084202159066.customer.alfanett.no,Norway,2007-01-01 12:31:15.369,Internet Explorer,Windows
+084202159066.customer.alfanett.no,Norway,2007-01-01 19:47:34.417,Internet Explorer,Windows
+0x503fba1a.albnxx8.adsl-dhcp.tele.dk,Denmark,2006-11-14 23:10:17.172,Internet Explorer,Windows
+0x503feb2d.boanxx9.adsl-dhcp.tele.dk,Denmark,2005-12-29 05:18:45.329,Firefox,Windows
+0x50a5beed.ronxx1.adsl-dhcp.tele.dk,Denmark,2005-11-17 05:20:17.554,Firefox,Linux
+0x55514e14.adsl.cybercity.dk,Denmark,2006-02-03 15:47:31.283,Safaria,Macintosh
+0x5552aa4b.adsl.cybercity.dk,Denmark,2005-11-28 03:31:38.794,Internet Explorer,Windows
+0x5552aa4b.adsl.cybercity.dk,Denmark,2005-11-28 03:32:28.44,Internet Explorer,Windows
+0x5552c3aa.adsl.cybercity.dk,Denmark,2007-04-30 23:04:53.046,Internet Explorer,Windows
+100-137.priv21.nus.edu.sg,Private Network,2006-01-08 10:25:58.487,Internet Explorer,Windows
+100-137.priv21.nus.edu.sg,Private Network,2006-01-08 10:28:02.435,Internet Explorer,Windows
+100-137.priv21.nus.edu.sg,Private Network,2006-01-08 10:29:13.887,Internet Explorer,Windows
+100-137.priv21.nus.edu.sg,Private Network,2006-01-08 10:30:05.594,Internet Explorer,Windows
+100-195.priv21.nus.edu.sg,Private Network,2006-04-19 08:41:52.923,Internet Explorer,Windows
+100-195.priv21.nus.edu.sg,Private Network,2006-04-19 08:46:06.501,Internet Explorer,Windows
+100-195.priv21.nus.edu.sg,Private Network,2006-04-19 11:35:14.327,Internet Explorer,Windows
+100-198.priv21.nus.edu.sg,Private Network,2006-04-18 09:11:27.668,Internet Explorer,Windows
+100-198.priv21.nus.edu.sg,Private Network,2006-04-18 09:12:13.635,Internet Explorer,Windows
+100-198.priv21.nus.edu.sg,Private Network,2006-04-18 13:52:19.409,Internet Explorer,Windows
+100-200.priv21.nus.edu.sg,Private Network,2006-02-17 12:42:03.195,Internet Explorer,Windows
+100-200.priv21.nus.edu.sg,Private Network,2006-02-17 12:43:00.407,Internet Explorer,Windows
+100-200.priv21.nus.edu.sg,Private Network,2006-02-17 12:43:30.081,Internet Explorer,Windows
+100-248.priv21.nus.edu.sg,Private Network,2005-11-28 08:41:21.921,Firefox,Windows
+100-248.priv21.nus.edu.sg,Private Network,2005-11-28 08:41:37.25,Firefox,Windows
+100-248.priv21.nus.edu.sg,Private Network,2005-11-28 08:44:38.628,Firefox,Windows
+100-248.priv21.nus.edu.sg,Private Network,2005-11-28 08:49:59.282,Firefox,Windows
+100-44.priv21.nus.edu.sg,Private Network,2006-02-14 08:53:44.273,Internet Explorer,Windows
+100-44.priv21.nus.edu.sg,Private Network,2006-02-14 08:55:05.026,Internet Explorer,Windows
+100-44.priv21.nus.edu.sg,Private Network,2006-02-14 08:55:09.38,Internet Explorer,Windows
+100-44.priv21.nus.edu.sg,Private Network,2006-02-14 08:55:48.62,Internet Explorer,Windows
+100.Red-83-44-211.dynamicIP.rima-tde.net,Spain,2007-04-26 11:47:09.424,Internet Explorer,Windows
+101-106.priv21.nus.edu.sg,Private Network,2006-03-20 20:57:24.512,Internet Explorer,Windows
+101-106.priv21.nus.edu.sg,Private Network,2006-03-21 08:21:49.881,Internet Explorer,Windows
+101-106.priv21.nus.edu.sg,Private Network,2006-03-21 08:23:44.333,Internet Explorer,Windows
+101-106.priv21.nus.edu.sg,Private Network,2006-03-21 08:26:13.191,Internet Explorer,Windows
+101-106.priv21.nus.edu.sg,Private Network,2006-03-21 09:58:18.628,Internet Explorer,Windows
+101-106.priv21.nus.edu.sg,Private Network,2006-03-21 15:00:05.953,Internet Explorer,Windows
+101-106.priv21.nus.edu.sg,Private Network,2006-03-21 15:14:54.453,Internet Explorer,Windows
+101-156.priv21.nus.edu.sg,Private Network,2006-01-11 09:03:55.986,Internet Explorer,Windows
+101-156.priv21.nus.edu.sg,Private Network,2006-01-11 09:29:30.44,Internet Explorer,Windows
+101-156.priv21.nus.edu.sg,Private Network,2006-01-11 09:30:30.081,Internet Explorer,Windows
+101-165.priv21.nus.edu.sg,Private Network,2006-03-19 19:18:33.932,Internet Explorer,Windows
+101-165.priv21.nus.edu.sg,Private Network,2006-03-19 19:19:16.685,Internet Explorer,Windows
+101-165.priv21.nus.edu.sg,Private Network,2006-03-19 19:19:31.788,Internet Explorer,Windows
+101-165.priv21.nus.edu.sg,Private Network,2006-03-20 08:20:42.943,Internet Explorer,Windows
+101-165.priv21.nus.edu.sg,Private Network,2006-03-20 08:21:00.817,Internet Explorer,Windows
+101-25.priv21.nus.edu.sg,Private Network,2005-12-23 22:13:53.398,Internet Explorer,Windows
+101-25.priv21.nus.edu.sg,Private Network,2005-12-24 09:25:37.822,Internet Explorer,Windows
+101-25.priv21.nus.edu.sg,Private Network,2005-12-24 09:26:10.798,Internet Explorer,Windows
+101-25.priv21.nus.edu.sg,Private Network,2005-12-24 09:26:56.465,Internet Explorer,Windows
+101-33.priv21.nus.edu.sg,Private Network,2006-03-08 08:44:29.541,Internet Explorer,Windows
+101-33.priv21.nus.edu.sg,Private Network,2006-03-08 08:46:26.321,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 08:41:51.023,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 08:42:28.30,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 08:43:08.403,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 10:32:08.413,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 12:49:54.909,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 12:50:51.856,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 12:52:27.405,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 15:51:40.46,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 15:52:29.62,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 23:16:50.327,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 23:18:33.394,Internet Explorer,Windows
+101-51.priv21.nus.edu.sg,Private Network,2005-11-18 23:19:11.635,Internet Explorer,Windows
+102-181.priv21.nus.edu.sg,Private Network,2006-01-26 08:54:26.11,Internet Explorer,Windows
+102-181.priv21.nus.edu.sg,Private Network,2006-01-26 08:56:46.895,Internet Explorer,Windows
+102-181.priv21.nus.edu.sg,Private Network,2006-01-26 08:58:41.087,Internet Explorer,Windows
+102-197.priv21.nus.edu.sg,Private Network,2006-02-12 21:33:38.447,Internet Explorer,Windows
+102-197.priv21.nus.edu.sg,Private Network,2006-02-13 08:47:23.77,Internet Explorer,Windows
+102-197.priv21.nus.edu.sg,Private Network,2006-02-13 08:47:47.633,Internet Explorer,Windows
+102-197.priv21.nus.edu.sg,Private Network,2006-02-13 08:48:59.914,Internet Explorer,Windows
+102-197.priv21.nus.edu.sg,Private Network,2006-02-13 08:50:48.804,Internet Explorer,Windows
+102-55.priv21.nus.edu.sg,Private Network,2005-12-11 10:34:18.228,Internet Explorer,Windows
+102-55.priv21.nus.edu.sg,Private Network,2005-12-11 10:35:31.732,Internet Explorer,Windows

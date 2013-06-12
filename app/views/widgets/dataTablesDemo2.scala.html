@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>DataTablesDemo2</title>
+
+
+<script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.dataTables.css")">
+
+<script src="@routes.Assets.at("javascripts/jquery.dataTables.min.js")" type="text/javascript"></script>
+
+<script type="text/javascript" charset="utf-8">
+                    
+	$(document).ready(function() {
+		$('#example').dataTable({
+			bJQueryUI : false,
+			"bFilter" : false, // hide search box 
+			"iDisplayLength" : 10, // No of rows per page
+			"bLengthChange" : false, //Hide  page size select drop down.
+			"bPaginate" : true, // enabled pagination
+
+			sPaginationType : "full_numbers",
+			"aoColumnDefs" : [
+			// Disable sorting for column "Row No"
+			{
+				"bSortable" : false,
+				"aTargets" : [ 0 ]
+			},
+			// Specify a css class for cells in column "Row No"
+			{
+				"sClass" : "center",
+				"aTargets" : [ 0 ]
+			} ],
+
+			"bProcessing" : true, // Turn on indicator
+			"bServerSide" : true, // Enable server side processing
+			"sAjaxSource" :  "@controllers.widgets.routes.DataTablesDemo2.load" 
+		});
+	});
+</script>
+
+
+</head>
+<body>
+	<h1>DataTablesDemo2</h1>
+	 @import play.api.Play.current
+	An example of <a href="@current.configuration.getString("DataTablesURL")">DataTables</a> 
+	to display a table of data, where only a page of data is fetched, using Ajax, 
+	from the server at a time. The sorting of columns, paging are done on the server.  
+    <br/> <br/>
+    
+	<table id="example" class="display">
+		<thead>
+			<tr>
+				<th>Row No</th>
+				<th>Remote Host</th>
+				<th>Access Time</th>
+				<th>Country</th>
+				<th>Browser</th>
+				<th>Operating System</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td colspan="6" class="dataTables_empty">Loading data from
+					server</td>
+			</tr>
+		</tbody>
+
+
+
+	</table>
+
+
+
+
+	
+</body>
+</html>

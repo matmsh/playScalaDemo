@@ -1,7 +1,19 @@
 @(message: String)
-
-@main("Welcome to Play 2.1") {
+  @import play.api.Play.current
+@main("Play (Scala) Demo") {
+   
     
-    @play20.welcome(message)
+    This Play application has some examples and demonstrations on Play 2.1.1 (Scala).
+    The source code of this application is available at 
+    <a href="@current.configuration.getString("GitHubURL")">GitHub</a>.
+    <br/> <br/>
     
+    
+    <h3>DataTables</h3>
+    <ul>
+        <li>An <a href="@controllers.widgets.routes.DataTablesDemo1.show" target="_blank">example</a>
+            of displaying a static table using DataTables. </li>
+     <li>An <a href="@controllers.widgets.routes.DataTablesDemo2.show" target="_blank">example</a>
+            of DataTables with sorting and paging done by the server. </li>
+    </ul>
 }
