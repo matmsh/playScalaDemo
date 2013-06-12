@@ -1,15 +1,68 @@
 @(title: String)(content: Html)
-
+ @import play.api.Play.current
 <!DOCTYPE html>
 
 <html>
     <head>
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+   
+   
     </head>
+    
     <body>
-        @content
-    </body>
+
+	<div class="container-fluid">
+		<div class="page-header" >
+				<h1 style="color:white">
+					Play @current.configuration.getString("playVersion") (Scala) Demo  
+				</h1>
+			</div>
+		<div class="row-fluid">
+		
+			<div class="span2">
+				<div class="well sidebar-nav">
+					<p>
+					    <a href="http://www.playframework.com/">
+						<img src="@routes.Assets.at("images/play.png")"/>
+						</a>
+					</p>
+                <p>
+					    <a href="http://www.playframework.com/">
+						<img src="@routes.Assets.at("images/jboss.gif")" style="border: 1px solid black;width:130px"/>
+						</a>
+					</p>
+
+					
+				</div>
+			</div>
+
+			<div class="span10">
+				  @content
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+	
+	You are visitor number 
+<a href="http://lombok.demon.co.uk/pageCounter/summary/http:$002f$002flombok.demon.co.uk$002fplayScalaDemo$002f">
+<IMG  align="absmiddle" border="0" src="http://lombok.demon.co.uk/pageCounter/counter/20/000000/fffff0/http:$002f$002flombok.demon.co.uk$002fplayScalaDemo$002f"/>
+</a>
+	since 12th June, 2013. <br/>
+	
+	
+	
+	<div style="text-align:center">
+	 Last updated on @current.configuration.getString("lastUpdated"). Created by
+       <a href="@current.configuration.getString("homeURL")"> SH Man</a> on 
+       @current.configuration.getString("creationDate").
+	</div>
+	
+	</div>
+	
+</body>
+    
 </html>
