@@ -5,9 +5,13 @@
 # Home page
 GET     /                           controllers.Application.index
 
+GET     /source/show/:key                       controllers.Source.show(key:String)               
+
 GET   /widgets/dataTablesDemo1/show               controllers.widgets.DataTablesDemo1.show
 GET   /widgets/dataTablesDemo2/show               controllers.widgets.DataTablesDemo2.show
 GET   /widgets/dataTablesDemo2/load               controllers.widgets.DataTablesDemo2.load
+
+
 
 
 # Map static resources from the /public folder to the /assets URL path
