@@ -3,14 +3,13 @@
 <html>
 <head>
 <title>DataTablesDemo2</title>
-
-
-<script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
-<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/jquery.dataTables.css")">
-
-<script src="@routes.Assets.at("javascripts/jquery.dataTables.min.js")" type="text/javascript"></script>
-
-<script type="text/javascript" charset="utf-8">
+  <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" 
+                                    type="text/javascript"></script>
+  <link rel="stylesheet" media="screen" 
+                  href="@routes.Assets.at("stylesheets/jquery.dataTables.css")">
+  <script src="@routes.Assets.at("javascripts/jquery.dataTables.min.js")"
+              type="text/javascript"></script>
+  <script type="text/javascript" charset="utf-8">
                     
 	$(document).ready(function() {
 		$('#example').dataTable({
@@ -38,7 +37,7 @@
 			"sAjaxSource" :  "@controllers.widgets.routes.DataTablesDemo2.load" 
 		});
 	});
-</script>
+ </script>
 
 
 </head>
@@ -48,6 +47,8 @@
 	An example of <a href="@current.configuration.getString("DataTablesURL")">DataTables</a> 
 	to display a table of data, where only a page of data is fetched, using Ajax, 
 	from the server at a time. The sorting of columns, paging are done on the server.  
+	 The source code of this demo is
+     <a href="@controllers.routes.Source.show("DataTablesDemo2")" target="_blank">here</a>.
     <br/> <br/>
     
 	<table id="example" class="display">
@@ -68,14 +69,6 @@
 					server</td>
 			</tr>
 		</tbody>
-
-
-
 	</table>
-
-
-
-
-	
 </body>
 </html>
