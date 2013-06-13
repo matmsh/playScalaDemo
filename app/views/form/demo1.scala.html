@@ -1,0 +1,69 @@
+ @(motorcycleForm:Form[controllers.form.Demo1.Motorcycle])(implicit flash:Flash)
+
+
+<html>
+<head>
+<title>Form Demo 1</title>
+
+<style>
+label {
+	color: blue;
+}
+
+dd.info {
+	color: green;
+}
+
+dd.error {
+	color: red;
+}
+
+div.error {
+    color: white;
+    background-color:red;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+<h1>Form Demo 1</h1>
+  When the form is submitted with no validation errors, a redirect after post is executed,
+  and the form data is stored in the flash
+	scope and redisplayed at the bottom of this page.
+	 (A successful submit follows by a reload will not resubmit the
+	form. A failed submit follows by a reload will submit the form.)
+	The source code of this demo is
+     <a href="@controllers.routes.Source.show("form.Demo1")" target="_blank">here</a>.
+    <br/><br/>
+
+	
+<div style="margin-left:1em">
+	@if(motorcycleForm.hasErrors) {
+	<div class="error">The form has
+		@motorcycleForm.errors.size errors</div>
+	} 
+
+	@helper.form(action=controllers.form.routes.Demo1.submit()){
+	   @helper.inputText(motorcycleForm("name"),'_label->"Name")
+
+	   @helper.inputText(motorcycleForm("make"),'_label->"Make")
+
+	   @helper.inputText(motorcycleForm("engineCapacity"),'_label->"Capacity in CC") 
+
+	   @helper.inputText(motorcycleForm("yearOfManufacture"),'_label->"Year of Manufacture")
+
+	   <input type="submit" name="send" value="Submit" /> }
+	<hr/>
+	
+	@if(flash.get("success").isDefined) { You have entered :<br/>
+	
+	    Name : @motorcycleForm.get.name <br/>
+	    Make : @motorcycleForm.get.make  <br/>
+	    Capacity in CC : @motorcycleForm.get.engineCapacity  <br/>
+	    Year of manufacture : @motorcycleForm.get.yearOfManufacture  <br/>
+	    
+	}
+</div>
+</body>
+</html>

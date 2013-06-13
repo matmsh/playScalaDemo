@@ -3,7 +3,7 @@
 
 <html>
 <head>
-<title>Source</title>
+<title>Source of @title</title>
 
 
 <script src="@routes.Assets.at("javascripts/syntaxhighlighter/shCore.js")" 
@@ -41,33 +41,34 @@ body {
 
 <h3>Routes</h3>
 <pre class="brush: xml">
-    @routesSrc
+@routesSrc
 </pre>
 
 <br/>
 
  <h3>Controller : @controllerFilename</h3>
 <pre class="brush: scala">
-    @controllerSrc
+@controllerSrc
 </pre>
 
 <br/>
 
  <h3>View : @viewFilename</h3>
 <pre class="brush: xml">
-    @viewSrc
+@viewSrc
 </pre>
 
 <br/>
 
 
+@if( modelFilename != ""){
 <h3>Model: @modelFilename</h3>
 <pre class="brush: scala">
-    @modelSrc
+@modelSrc
 </pre>
 
 <br/>
-
+}
  
 
 <script type="text/javascript">

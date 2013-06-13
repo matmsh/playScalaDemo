@@ -20,10 +20,14 @@ object Source extends Controller {
     val viewFilename = current.configuration.getString(key + ".view").get
     val viewSrc = getFileAsString(viewFilename)
     
-    val modelFilename = current.configuration.getString(key + ".model").get
-    val modelSrc = getFileAsString(modelFilename)
+    //val modelFilename = current.configuration.getString(key + ".model").get
+   // val modelSrc = getFileAsString(modelFilename)
 
-
+    val modelOption = current.configuration.getString(key + ".model")
+    val modelSrc  = modelOption.map( getFileAsString(_)).getOrElse("")
+    val modelFilename = modelOption.getOrElse("");  
+    
+    
     val routes = getRoutesAsStr(key)
 
     Ok(views.html.source(title,routes, controllerSrc,controllerFilename, viewSrc,
