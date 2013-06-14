@@ -1,0 +1,66 @@
+ @(motorcycleForm:Form[controllers.form.Demo2.Motorcycle])(implicit flash:Flash)
+
+
+<html>
+<head>
+<title>Form Demo 2</title>
+
+<style>
+label {
+	color: blue;
+}
+
+dd.info {
+	color: green;
+}
+
+dd.error {
+	color: red;
+}
+
+div.error {
+    color: white;
+    background-color:red;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+<h1>Form Demo 2</h1>
+   A form with some custom error messages and a custom constraint on the capacity field.
+  
+	The source code of this demo is
+     <a href="@controllers.routes.Source.show("form.Demo2")" target="_blank">here</a>.
+    <br/><br/>
+
+	
+<div style="margin-left:1em">
+	@if(motorcycleForm.hasErrors) {
+	<div class="error">The form has
+		@motorcycleForm.errors.size errors</div>
+	} 
+
+	@helper.form(action=controllers.form.routes.Demo2.submit()){
+	   @helper.inputText(motorcycleForm("name"),'_label->"Name",'_showConstraints->false)
+
+	   @helper.inputText(motorcycleForm("make"),'_label->"Make",'_showConstraints->false)
+
+	   @helper.inputText(motorcycleForm("engineCapacity"),'_label->"Capacity in CC",'_showConstraints->true) 
+
+	   @helper.inputText(motorcycleForm("yearOfManufacture"),'_label->"Year of Manufacture",'_showConstraints->false)
+
+	   <input type="submit" name="send" value="Submit" /> }
+	<hr/>
+	
+	@if(flash.get("success").isDefined) { You have entered :<br/>
+	
+	    Name : @motorcycleForm.get.name <br/>
+	    Make : @motorcycleForm.get.make  <br/>
+	    Capacity in CC : @motorcycleForm.get.engineCapacity  <br/>
+	    Year of manufacture : @motorcycleForm.get.yearOfManufacture  <br/>
+	    
+	}
+</div>
+</body>
+</html>

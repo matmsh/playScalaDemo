@@ -7,6 +7,11 @@ import play.api.Play.current
 
 object Source extends Controller {
 
+  case class Parameters(title:String,routes:String, messages:String,
+                 controllerSrc:String,controllerFilename:String,
+                 viewSrc:String, viewFilename:String,
+                 modelSrc:String,modelFilename:String)
+  
   /**
    *  key should be the short name of a controller object.  
    */
@@ -15,34 +20,33 @@ object Source extends Controller {
     val title = current.configuration.getString(key + ".title").getOrElse("Not found")
       
     val controllerFilename = current.configuration.getString(key + ".controller").get
-    val controllerSrc = getFileAsString(controllerFilename)
+    val controllerSrc = getFileAsStr(controllerFilename)
 
     val viewFilename = current.configuration.getString(key + ".view").get
-    val viewSrc = getFileAsString(viewFilename)
+    val viewSrc = getFileAsStr(viewFilename)
     
-    //val modelFilename = current.configuration.getString(key + ".model").get
-   // val modelSrc = getFileAsString(modelFilename)
-
+  
     val modelOption = current.configuration.getString(key + ".model")
-    val modelSrc  = modelOption.map( getFileAsString(_)).getOrElse("")
+    val modelSrc  = modelOption.map( getFileAsStr(_)).getOrElse("")
     val modelFilename = modelOption.getOrElse("");  
     
+    val filter = (x:String) => (x.contains(key))
     
-    val routes = getRoutesAsStr(key)
+    val routes =  getFileAsStr("routes", filter) //getRoutesAsStr(key)
+    val messages =getFileAsStr("messages", filter)
+    
+     
+    val params = Parameters(title,routes,messages,controllerSrc,controllerFilename,
+                     viewSrc, viewFilename,modelSrc,modelFilename)
+     Ok(views.html.source(params))
+  } 
 
-    Ok(views.html.source(title,routes, controllerSrc,controllerFilename, viewSrc,
-         viewFilename, modelSrc,modelFilename))
-  }
 
-  private def getFileAsString(filename: String): String = {
-    val inputStream = Play.classloader.getResourceAsStream(filename)
-    io.Source.fromInputStream(inputStream).getLines.mkString("\n")
+   
+  private def getFileAsStr(filename:String,filterFn: String => Boolean= (_ => true) ):String={
+     val inputStream = Play.classloader.getResourceAsStream(filename)
+     io.Source.fromInputStream(inputStream).getLines.filter( filterFn).mkString("\n")
   }
   
-  private def getRoutesAsStr(key: String): String = {
-    val inputStream = Play.classloader.getResourceAsStream("routes")
-    io.Source.fromInputStream(inputStream).getLines.filter( _.contains(key)).mkString("\n")
-
-  }
 
 }

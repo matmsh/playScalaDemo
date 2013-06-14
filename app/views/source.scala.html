@@ -1,9 +1,8 @@
-@(title:String, routesSrc:String,controllerSrc:String, controllerFilename:String, 
-     viewSrc:String, viewFilename:String, modelSrc:String,modelFilename:String)
+@(params:controllers.Source.Parameters)
 
 <html>
 <head>
-<title>Source of @title</title>
+<title>Source of @params.title</title>
 
 
 <script src="@routes.Assets.at("javascripts/syntaxhighlighter/shCore.js")" 
@@ -14,7 +13,10 @@
        
 <script type="text/javascript" 
   src="@routes.Assets.at("javascripts/syntaxhighlighter/shBrushXml.js")"></script>
-
+      
+<script type="text/javascript" 
+  src="@routes.Assets.at("javascripts/syntaxhighlighter/shBrushPlain.js")"></script>
+  
 <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/syntaxhighlighter/shCore.css")">
 
 <link rel="stylesheet" media="screen"
@@ -37,34 +39,47 @@ body {
 
 <body>
 
-	<h1>Source code for @title</h1>
+	<h1>Source code for @params.title</h1>
 
 <h3>Routes</h3>
 <pre class="brush: xml">
-@routesSrc
+@params.routes
 </pre>
 
 <br/>
 
- <h3>Controller : @controllerFilename</h3>
+
+@if( params.messages.nonEmpty){
+<h3>Messages</h3>
+<pre class="brush: plain">
+@params.messages
+</pre>
+
+<br/>
+}
+
+ <h3>Controller : @params.controllerFilename</h3>
 <pre class="brush: scala">
-@controllerSrc
+@params.controllerSrc
 </pre>
 
 <br/>
 
- <h3>View : @viewFilename</h3>
+
+
+
+ <h3>View : @params.viewFilename</h3>
 <pre class="brush: xml">
-@viewSrc
+@params.viewSrc
 </pre>
 
 <br/>
 
 
-@if( modelFilename != ""){
-<h3>Model: @modelFilename</h3>
+@if( params.modelFilename != ""){
+<h3>Model: @params.modelFilename</h3>
 <pre class="brush: scala">
-@modelSrc
+@params.modelSrc
 </pre>
 
 <br/>
