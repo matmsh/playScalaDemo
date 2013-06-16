@@ -35,8 +35,8 @@ object Demo2 extends Controller {
       "make" -> text.verifying(Messages("form.Demo2.validation.make"), _.nonEmpty),
        // capacity must be in [50,1000]
       "engineCapacity" -> number.verifying(rangeCheck(50, 1000)),
-      // year of manufacture must be from 1970 to 2013 inclusively.
-      "yearOfManufacture" -> number(1970, 2013))(Motorcycle.apply)(Motorcycle.unapply)
+      //   Will use a dropdown list in the form for yearOfMaufacture.
+      "yearOfManufacture" -> number)(Motorcycle.apply)(Motorcycle.unapply)
 
   val motorcycleForm = Form[Motorcycle](motorcycleMapping)
 

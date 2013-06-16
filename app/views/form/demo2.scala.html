@@ -23,6 +23,11 @@ div.error {
     background-color:red;
     font-weight:bold;
 }
+
+#yearOfManufacture{
+  width:8em;
+}
+
 </style>
 </head>
 
@@ -49,9 +54,11 @@ div.error {
 	   @helper.inputText(motorcycleForm("make"),'_label->"Make",'_showConstraints->false)
 
 	   @helper.inputText(motorcycleForm("engineCapacity"),'_label->"Capacity in CC",'_showConstraints->true) 
-
-	   @helper.inputText(motorcycleForm("yearOfManufacture"),'_label->"Year of Manufacture",'_showConstraints->false)
-
+	
+       @helper.select(motorcycleForm("yearOfManufacture"), 
+                      (2000 to 2013).map( x => ( x.toString, x.toString)),
+                  '_label->"Year of Manufacture", '_default-> "---", '_showConstraints->false)
+                  
 	   <input type="submit" name="send" value="Submit" /> }
 	<hr/>
 	

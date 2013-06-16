@@ -20,7 +20,7 @@ object Demo1 extends Controller {
       "name" -> nonEmptyText,
       "make" -> nonEmptyText,
       "engineCapacity" -> number(50, 1000), // capacity must be in [50,1000]
-      // Will use a droplist in the form for yearOfMaufacture.
+      // Will use a dropdown list in the form for yearOfMaufacture.
       "yearOfManufacture" -> number)(Motorcycle.apply)(Motorcycle.unapply)
 
   val motorcycleForm = Form[Motorcycle](motorcycleMapping)
