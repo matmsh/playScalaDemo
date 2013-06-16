@@ -1,0 +1,80 @@
+ @(motorcycleForm:Form[controllers.form.DemoBootstrap.Motorcycle])(implicit flash:Flash)
+
+<!--  Import Bootstrap form helpers. -->
+@import helper._
+@import helper.twitterBootstrap._
+
+
+<html>
+<head>
+<title>Form Demo Bootstrap</title>
+<link rel='stylesheet' type='text/css' href='@routes.Assets.at("stylesheets/bootstrap.css")'>
+<style>
+        label {
+            color: blue;
+            font-weight:bold;
+        }
+        body{
+           margin-left:15px;
+           margin-right:15px;
+        }
+        .help-inline {
+            color:red;
+         }
+         
+         .help-block {
+            color:green;
+         }
+         
+         input {
+           height:20px;'
+         }
+         
+        div.formError {
+          color: white;
+          background-color:red;
+         font-weight:bold;
+        }
+</style>
+</head>
+
+<body>
+<h1>Form Demo With Bootstrap</h1>
+    A demo on using Bootstrap form helpers. 
+ 
+	The source code of this demo is
+     <a href="@controllers.routes.Source.show("form.DemoBootstrap")" target="_blank">here</a>.
+    <br/><br/>
+
+	
+
+	@if(motorcycleForm.hasErrors) {
+	<div class="formError">The form has
+		@motorcycleForm.errors.size errors</div>
+	} 
+
+     <h2>Motorcycle</h2>
+
+	@helper.form(action=controllers.form.routes.DemoBootstrap.submit()){
+	   @helper.inputText(motorcycleForm("name"),'_label->"Name")
+
+	   @helper.inputText(motorcycleForm("make"),'_label->"Make")
+
+	   @helper.inputText(motorcycleForm("engineCapacity"),'_label->"Capacity in CC") 
+
+	   @helper.inputText(motorcycleForm("yearOfManufacture"),'_label->"Year of Manufacture")
+
+	   <input type="submit" name="send" value="Submit" /> }
+	<hr/>
+	
+	@if(flash.get("success").isDefined) { You have entered :<br/>
+	
+	    Name : @motorcycleForm.get.name <br/>
+	    Make : @motorcycleForm.get.make  <br/>
+	    Capacity in CC : @motorcycleForm.get.engineCapacity  <br/>
+	    Year of manufacture : @motorcycleForm.get.yearOfManufacture  <br/>
+	    
+	}
+
+</body>
+</html>
