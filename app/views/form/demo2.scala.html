@@ -40,7 +40,9 @@ div.error {
 	<div class="error">The form has
 		@motorcycleForm.errors.size errors</div>
 	} 
-
+  
+   <h2>Motorcycle</h2>
+  
 	@helper.form(action=controllers.form.routes.Demo2.submit()){
 	   @helper.inputText(motorcycleForm("name"),'_label->"Name",'_showConstraints->false)
 
