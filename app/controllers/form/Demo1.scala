@@ -20,8 +20,8 @@ object Demo1 extends Controller {
       "name" -> nonEmptyText,
       "make" -> nonEmptyText,
       "engineCapacity" -> number(50, 1000), // capacity must be in [50,1000]
-      // year of manufacture must be from 1970 to 2013 inclusively.
-      "yearOfManufacture" -> number(1970, 2013))(Motorcycle.apply)(Motorcycle.unapply)
+      // Will use a droplist in the form for yearOfMaufacture.
+      "yearOfManufacture" -> number)(Motorcycle.apply)(Motorcycle.unapply)
 
   val motorcycleForm = Form[Motorcycle](motorcycleMapping)
 
@@ -31,8 +31,8 @@ object Demo1 extends Controller {
         // Redirect from a submit
         this.motorcycleForm.bind(flash.data)
       else{
-        // initial display
-        val bike = Motorcycle("CBR600", "Honda",600,2013)  
+        // initial display (do not set year of manufacture.)
+        val bike = Motorcycle("CBR600", "Honda",600,0)  
         this.motorcycleForm.fill(bike)
       }      
       Ok(views.html.form.demo1(form))

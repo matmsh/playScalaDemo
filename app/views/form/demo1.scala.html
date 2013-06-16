@@ -23,6 +23,12 @@ div.error {
     background-color:red;
     font-weight:bold;
 }
+
+#yearOfManufacture{
+  width:8em;
+}
+
+
 </style>
 </head>
 
@@ -53,13 +59,16 @@ div.error {
 
 	   @helper.inputText(motorcycleForm("engineCapacity"),'_label->"Capacity in CC") 
 
-	   @helper.inputText(motorcycleForm("yearOfManufacture"),'_label->"Year of Manufacture")
-
+		   
+	    @helper.select(motorcycleForm("yearOfManufacture"), 
+                 (2000 to 2013).map( x => ( x.toString, x.toString)),
+                  '_label->"Year of Manufacture", '_default-> "---")
+        
 	   <input type="submit" name="send" value="Submit" /> }
-	<hr/>
+	
 	
 	@if(flash.get("success").isDefined) { You have entered :<br/>
-	
+	<hr/>
 	    Name : @motorcycleForm.get.name <br/>
 	    Make : @motorcycleForm.get.make  <br/>
 	    Capacity in CC : @motorcycleForm.get.engineCapacity  <br/>

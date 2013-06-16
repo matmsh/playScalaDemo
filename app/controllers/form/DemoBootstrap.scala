@@ -39,7 +39,7 @@ object DemoBootstrap extends Controller {
   }
 
   def submit = Action {
-    implicit request =>
+    implicit request =>      
       // formInput contains the submitted values.
       val formInput: Form[Motorcycle] = this.motorcycleForm.bindFromRequest
       formInput.fold(
