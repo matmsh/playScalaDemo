@@ -66,11 +66,11 @@
                       (2000 to 2013).map( x => ( x.toString, x.toString)),
                   '_label->"Year of Manufacture", '_default-> "---")
 
-	   <input type="submit" name="send" value="Submit" /> }
-	<hr/>
+	   <button class="btn btn-primary" type="submit">Submit</button> 
+	  }
 	
 	@if(flash.get("success").isDefined) { You have entered :<br/>
-	
+	  <hr/>
 	    Name : @motorcycleForm.get.name <br/>
 	    Make : @motorcycleForm.get.make  <br/>
 	    Capacity in CC : @motorcycleForm.get.engineCapacity  <br/>
