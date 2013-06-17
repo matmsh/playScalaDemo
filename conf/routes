@@ -15,7 +15,8 @@ GET    /form/DemoBootstrap/show        controllers.form.DemoBootstrap.show
 POST   /form/DemoBootstrap/submit      controllers.form.DemoBootstrap.submit
 GET    /form/CrossValidation1/show     controllers.form.CrossValidation1.show
 POST   /form/CrossValidation1/submit    controllers.form.CrossValidation1.submit
-
+GET    /form/CrossValidation2/show     controllers.form.CrossValidation2.show
+POST   /form/CrossValidation2/submit    controllers.form.CrossValidation2.submit
 
 GET    /widgets/dataTablesDemo1/show   controllers.widgets.DataTablesDemo1.show
 GET    /widgets/dataTablesDemo2/show   controllers.widgets.DataTablesDemo2.show

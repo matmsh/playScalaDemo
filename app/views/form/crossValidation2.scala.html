@@ -1,0 +1,57 @@
+@(form:Form[controllers.form.CrossValidation2.Integers])(implicit flash:Flash)
+
+<html>
+<head>
+<title>Cross Validation Demo 2</title>
+
+<style>
+       label {
+            color: blue;
+        }
+        dd.info {
+            color: green;
+        }
+        dd.error {
+            color: red;           
+        }
+                
+        #globalError {
+            background-color: red; color: white; font-weight: bold;
+        }
+</style>
+</head>
+
+<body>
+<h1>Cross Validation Demo 2</h1>
+    A demo on cross validation on a list of three integers and display indexed label for 
+    each entry. <br/>
+     The difference
+     between the first and third integer must be divisible by 3.  
+ 
+	The source code of this demo is
+     <a href="@controllers.routes.Source.show("form.CrossValidation2")" target="_blank">here</a>.
+    <br/><br/>
+
+	 @form.globalError.map { error =>
+        <div id="globalError">@error.message</div>
+   } 
+
+    @helper.form(action=controllers.form.routes.CrossValidation2.submit()){
+          
+        @{  val field = form("numbers");
+            val label = (index:Int) => "Integer " + (index + 1);
+           (0 to 2).map( i => helper.inputText(field("[" + i + "]"), '_label -> label(i))
+                       )                                
+        }
+
+       <input type="submit" name="send" value="Submit" />
+    }
+
+   
+   @if(flash.get("success").isDefined) {
+       <hr/>
+         You have input :
+         <h1>@form.get.numbers.mkString(",") </h1> 
+   }  
+</body>
+</html>
