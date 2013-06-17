@@ -6,9 +6,12 @@ import play.api.data.Form
 import play.api.data.Forms._
 import play.api.data.validation.Constraints._
 import play.api.mvc._
+import play.api.templates.Html
 
 
-
+/**
+ * Cross validation on a list of integers.
+ */
 object CrossValidation1 extends Controller {
 
   case class Integers(numbers: List[Int]);
@@ -43,19 +46,7 @@ object CrossValidation1 extends Controller {
       val formInput: Form[Integers] = this.integersForm.bindFromRequest
 
       formInput.fold(
-
-        // If the form has validation error, redisplay the show page with error.   
-        hasErrors = { formWithError =>        
-          val formWithError2 = if (formWithError.hasGlobalErrors) {
-            // Mark the first and third occurrence of numbers.
-            formWithError.withError("numbers[0]", "*").withError("numbers[2]", "*")
-          } else {
-            formWithError
-          }
-
-          Ok(views.html.form.crossValidation1(formWithError2))
-        },
-
+         hasErrors = processError,
         // If there is no validation error, redisplay the form and output entered name.
         success = { integers =>
           val newForm = integersForm.fill(integers);
@@ -64,7 +55,18 @@ object CrossValidation1 extends Controller {
         })
 
   }
-  
+
+  private def processError(formWithError: Form[Integers])(implicit request: Request[Any]): SimpleResult[Html] = {
+    val formWithError2 = if (formWithError.hasGlobalErrors) {
+      // Mark the first and third occurrence of numbers.
+      formWithError.withError("numbers[0]", "*").withError("numbers[2]", "*")
+    } else {
+      formWithError
+    }
+
+    Ok(views.html.form.crossValidation1(formWithError2))
+
+  }
    
    
   
