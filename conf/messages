@@ -1,4 +1,8 @@
+form.CustomIntMapping.required.int=Please enter an integer.
+form.CustomIntMapping.error.int={0} is not an integer. Please enter an integer.
+
 form.Demo2.validation.name=Please input a name.
 form.Demo2.validation.make=Please input a make.
 form.Demo2.validation.capacity=Capacity out of range. Please input engine capacity between {0} and {1} inclusively.
 form.Demo2.validation.year=Please input year of manufacture.
+

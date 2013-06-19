@@ -1,0 +1,58 @@
+ @(form:Form[controllers.form.CustomIntMapping.IntPair])(implicit flash:Flash)
+
+
+<html>
+<head>
+<title>Custom Int Mapping</title>
+
+<style>
+        label {
+            color: blue;
+        }
+        dd.info {
+            color: green;
+        }
+        dd.error {
+            color: red;
+           
+        }
+                
+        .globalError {
+            background-color: red; color: white; font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+
+<h1>Custom Int Mapping</h1>
+  A and B below use a custom Int mapping. 
+    The difference between A and B must be divisible by 3.
+    The source code of this demo is
+     <a href="@controllers.routes.Source.show("form.CustomIntMapping")" target="_blank">here</a>.
+    <br/><br/>
+  
+
+   @form.globalError.map { error =>
+        <div class="globalError">@error.message</div>
+   } 
+
+    @helper.form(action=controllers.form.routes.CustomIntMapping.submit()){
+       
+        @helper.inputText(form("numA"), '_label -> "Integer A") 
+        @helper.inputText(form("numB"), '_label -> "Integer B") 
+
+       <input type="submit" name="send" value="Submit" />
+    }
+
+   
+   @if(flash.get("success").isDefined) {
+   <hr/>
+     You have input :
+         <h1>@form.get </h1> 
+   }  
+<body>
+
+</div>
+</body>
+</html>

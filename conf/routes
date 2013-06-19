@@ -13,6 +13,10 @@ GET    /form/Demo2/show                controllers.form.Demo2.show
 POST   /form/Demo2/submit              controllers.form.Demo2.submit
 GET    /form/DemoBootstrap/show        controllers.form.DemoBootstrap.show
 POST   /form/DemoBootstrap/submit      controllers.form.DemoBootstrap.submit
+GET    /form/CustomIntMapping/show        controllers.form.CustomIntMapping.show
+POST   /form/CustomIntMapping/submit      controllers.form.CustomIntMapping.submit
+
+
 GET    /form/CrossValidation1/show     controllers.form.CrossValidation1.show
 POST   /form/CrossValidation1/submit    controllers.form.CrossValidation1.submit
 GET    /form/CrossValidation2/show     controllers.form.CrossValidation2.show
