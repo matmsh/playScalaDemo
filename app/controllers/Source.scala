@@ -53,7 +53,16 @@ object Source extends Controller {
 
   private def getFileAsStr(filename: String, filterFn: String => Boolean = (_ => true)): String = {
     val inputStream = Play.classloader.getResourceAsStream(filename)
-    io.Source.fromInputStream(inputStream).getLines.filter(filterFn).mkString("\n")
+    try {
+      io.Source.fromInputStream(inputStream).getLines.filter(filterFn).mkString("\n")
+    } catch {
+      case ex: Exception => {
+        Logger.info("filename=" + filename + "\n" + ex.getMessage())
+        ""
+      }
+
+    }
+
   }
 
   /**

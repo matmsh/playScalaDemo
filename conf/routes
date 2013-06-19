@@ -22,6 +22,9 @@ POST   /form/CrossValidation1/submit             controllers.form.CrossValidatio
 GET    /form/CrossValidation2/show               controllers.form.CrossValidation2.show
 POST   /form/CrossValidation2/submit             controllers.form.CrossValidation2.submit
 
+GET    /form/ListOfObjectsDemo/show     controllers.form.ListOfObjectsDemo.show
+POST   /form/ListOfObjectsDemo/submit   controllers.form.ListOfObjectsDemo.submit
+
 GET    /form/SimpleFieldConstructorDemo/show     controllers.form.SimpleFieldConstructorDemo.show
 POST   /form/SimpleFieldConstructorDemo/submit   controllers.form.SimpleFieldConstructorDemo.submit
 

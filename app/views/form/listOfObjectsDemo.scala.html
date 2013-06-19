@@ -1,0 +1,91 @@
+@(pForm:Form[controllers.form.ListOfObjectsDemo.Points])(implicit flash:Flash)
+
+
+<!--   Make simpleFieldConstructor available  -->
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(views.html.helper.simpleFieldConstructor.render) }
+
+<html>
+<head>
+<title>Mapping Of List Of Objects</title>
+<style>
+       
+        td.header {
+           font-weight:bold;
+           text-align:center;
+        }
+        .p_error {
+            color: red;
+            border-color: red;
+        }
+        
+        
+        .globalError {
+            background-color: red; color: white; font-weight: bold;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+<h1>Mapping of List of Objects Demo</h1>
+
+
+   A form with a list of Points. The form has a nested mapping. For each point (x,y), x must be less than y.
+    A custom FieldConstructor is used to display the input element (without the label).
+    The source code of this demo is
+     <a href="@controllers.routes.Source.show("form.ListOfObjectsDemo")"
+                               target="_blank">here</a>.
+    
+   
+    <br/>   <br/>
+
+ 
+   @if(pForm.hasErrors) {
+        <div class="globalError">
+              @Messages(pForm.errors(0).message, pForm.errors(0).args)
+        
+        </div>
+    } else {
+      @pForm.globalError.map { error =>
+               <div class="globalError">@Messages(error.message, error.args)</div>
+        } 
+    }
+    <br/>
+    <span style="font-weight:bold">Points</span>
+    @helper.form(action=controllers.form.routes.ListOfObjectsDemo.submit()){
+         
+        
+     <table border="1">
+       <tr>
+             <td class="header"> No </td>
+             <td class="header"> X</td>
+             <td class="header"> Y </td>
+            
+       </tr>
+       @for( index <- (0 to 2); points=pForm("points");  point =points("[" + index + "]")  ) {
+            
+            <tr>
+              <td> @(index  +1)  </td>
+               <!--  Use a custom FieldConstructor to display the input element only. -->
+              <td>                  
+                    @simpleInputText(point("x"),'_showErrors->false)   
+               </td>
+              <td> 
+                   @simpleInputText(point("y"),'_showErrors->false)
+              </td>
+           </tr>
+          
+      }
+       
+     </table>    
+       <input type="submit" name="send" value="Submit" />
+    }
+
+   
+   @if(flash.get("success").isDefined) {
+   <hr/>
+     You have input :
+         @pForm.get.points.mkString(",")  
+   }  
