@@ -1,0 +1,21 @@
+@**
+ * Only display the Input and error.
+ *
+ * It generates field as following:
+ * {{{
+ *
+ * <input type="text" id="name" name="name">
+ * <span class="p_error">eror</span>
+ * }}}
+ *
+ * @param el The field informations.
+ *@
+@(elements: views.html.helper.FieldElements)
+  
+    @elements.input
+    
+    
+    @elements.errors(elements.lang).map { error =>
+        <span class="p_error">@error</span>
+    }
+    

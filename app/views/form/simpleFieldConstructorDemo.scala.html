@@ -1,0 +1,81 @@
+@(itemForm:Form[controllers.form.SimpleFieldConstructorDemo.Item])(implicit flash:Flash)
+
+<!--   Make simpleFieldConstructor available  -->
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(views.html.helper.simpleFieldConstructor.render) }
+
+
+<html>
+<head>
+<title>SimpleFieldConstructorDemo</title>
+
+<style>
+       label {
+            color: blue;
+            font-weight:bold;
+        }
+       
+        .p_error {
+            color: red; 
+            border-color: red;      
+        }
+                
+        .globalError {
+            background-color: red; color: white; font-weight: bold;
+        }
+</style>
+</head>
+
+<body>
+<h1>Simple FieldConstructor Demo</h1>
+    This is a demo on a custom FieldConstructor. The default FieldConstructor renders the 
+    label and Input element together. This makes it impossible to render the label and 
+    Input element in separate table cells. In the following, a custom FieldConstructor is 
+    created to only  render the Input element (with the error message if desired). 
+    The label is rendered separately by another template. With the new custom 
+    FieldConstructor, the label and Input element could be rendered in  separate table cells.
+    <br/>
+    In the following, the error of  an input field is not displayed next to it. Instead, the field error
+     (only the first one) is  displayed at the top. 
+ 
+	The source code of this demo is
+     <a href="@controllers.routes.Source.show("form.SimpleFieldConstructorDemo")"
+                               target="_blank">here</a>.
+    <br/><br/>
+
+	<!--   Out the field errors first, then the global erros. -->
+   @if(itemForm.hasErrors) {
+        <div class="globalError">
+          @Messages(itemForm.errors(0).message,itemForm.errors(0).args)</div>
+    } else {
+      @itemForm.globalError.map { error =>
+               <div class="globalError">@error.message</div>
+        } 
+    }
+    <br/>
+    
+    <span style="font-weight:bold">Item</span>
+    @helper.form(action=controllers.form.routes.SimpleFieldConstructorDemo.submit()){
+     
+       <table border="1">
+        <tr>
+             <!--  Use a custom template to render a label  -->
+         <td> @label(itemForm("itemName"), '_label-> "Item Name")</td>
+         <td> @simpleInputText(itemForm("itemName"), '_showErrors->false)
+         
+          <td> @label(itemForm("description"), '_label-> "Description")</td>
+         <td> @simpleInputText(itemForm("description"), '_showErrors->false)
+         </td>
+       </table>
+       <br/>
+       <input type="submit" name="send" value="Submit" />
+    }
+
+   
+   @if(flash.get("success").isDefined) {
+       <hr/>
+         You have input :
+         <h1>@itemForm.get </h1> 
+   }  
+</body>
+</html>

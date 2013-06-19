@@ -3,31 +3,34 @@
 # ~~~~
 
 # Home page
-GET    /                               controllers.Application.index
+GET    /                                         controllers.Application.index
 
-GET    /source/show/:key               controllers.Source.show(key:String)               
+GET    /source/show/:key                         controllers.Source.show(key:String)               
 
-GET    /form/Demo1/show                controllers.form.Demo1.show
-POST   /form/Demo1/submit              controllers.form.Demo1.submit
-GET    /form/Demo2/show                controllers.form.Demo2.show
-POST   /form/Demo2/submit              controllers.form.Demo2.submit
-GET    /form/DemoBootstrap/show        controllers.form.DemoBootstrap.show
-POST   /form/DemoBootstrap/submit      controllers.form.DemoBootstrap.submit
-GET    /form/CustomIntMapping/show        controllers.form.CustomIntMapping.show
-POST   /form/CustomIntMapping/submit      controllers.form.CustomIntMapping.submit
+GET    /form/Demo1/show                          controllers.form.Demo1.show
+POST   /form/Demo1/submit                        controllers.form.Demo1.submit
+GET    /form/Demo2/show                          controllers.form.Demo2.show
+POST   /form/Demo2/submit                        controllers.form.Demo2.submit
+GET    /form/DemoBootstrap/show                  controllers.form.DemoBootstrap.show
+POST   /form/DemoBootstrap/submit                controllers.form.DemoBootstrap.submit
+GET    /form/CustomIntMapping/show               controllers.form.CustomIntMapping.show
+POST   /form/CustomIntMapping/submit             controllers.form.CustomIntMapping.submit
 
 
-GET    /form/CrossValidation1/show     controllers.form.CrossValidation1.show
-POST   /form/CrossValidation1/submit    controllers.form.CrossValidation1.submit
-GET    /form/CrossValidation2/show     controllers.form.CrossValidation2.show
-POST   /form/CrossValidation2/submit    controllers.form.CrossValidation2.submit
+GET    /form/CrossValidation1/show               controllers.form.CrossValidation1.show
+POST   /form/CrossValidation1/submit             controllers.form.CrossValidation1.submit
+GET    /form/CrossValidation2/show               controllers.form.CrossValidation2.show
+POST   /form/CrossValidation2/submit             controllers.form.CrossValidation2.submit
 
-GET    /widgets/dataTablesDemo1/show   controllers.widgets.DataTablesDemo1.show
-GET    /widgets/dataTablesDemo2/show   controllers.widgets.DataTablesDemo2.show
-GET    /widgets/dataTablesDemo2/load   controllers.widgets.DataTablesDemo2.load
+GET    /form/SimpleFieldConstructorDemo/show     controllers.form.SimpleFieldConstructorDemo.show
+POST   /form/SimpleFieldConstructorDemo/submit   controllers.form.SimpleFieldConstructorDemo.submit
+
+GET    /widgets/dataTablesDemo1/show             controllers.widgets.DataTablesDemo1.show
+GET    /widgets/dataTablesDemo2/show             controllers.widgets.DataTablesDemo2.show
+GET    /widgets/dataTablesDemo2/load             controllers.widgets.DataTablesDemo2.load
 
 
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET    /assets/*file                   controllers.Assets.at(path="/public", file)
+GET    /assets/*file                             controllers.Assets.at(path="/public", file)

@@ -1,0 +1,9 @@
+
+@(field: play.api.data.Field, args: (Symbol,Any)*)(implicit lang:Lang)
+
+     <label for="@field.id" 
+       class="@args.toMap.get('_class) @if(field.hasErrors) {p_error}" 
+             id="@args.toMap.get('_id).getOrElse(field.id + "_field")">
+            @args.toMap.get('_label).getOrElse(play.api.i18n.Messages(field.name))
+     </label>
+  
