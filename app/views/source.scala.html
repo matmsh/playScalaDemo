@@ -1,8 +1,8 @@
-@(params:controllers.Source.Parameters)
+@(title:String,displays:List[controllers.Source.Display])
 
 <html>
 <head>
-<title>Source of @params.title</title>
+<title>Source of @title</title>
 
 
 <script src="@routes.Assets.at("javascripts/syntaxhighlighter/shCore.js")" 
@@ -44,52 +44,17 @@ body {
 
 <body>
 
-	<h1>Source code for @params.title</h1>
+	<h1>Source code for @title</h1>
 
-<h3>Routes</h3>
-<pre class="brush: xml">
-@params.routes
+
+@for( display <- displays){
+<h3>@display.title</h3>
+<pre class="brush: @display.brush">
+ @display.content
 </pre>
-
-<br/>
-
-
-@if( params.messages.nonEmpty){
-<h3>Messages</h3>
-<pre class="brush: plain">
-@params.messages
-</pre>
-
 <br/>
 }
 
- <h3>Controller : @params.controllerFilename</h3>
-<pre class="brush: scala">
-@params.controllerSrc
-</pre>
-
-<br/>
-
-
-
-
- <h3>View : @params.viewFilename</h3>
-<pre class="brush: xml">
-@params.viewSrc
-</pre>
-
-<br/>
-
-
-@if( params.modelFilename != ""){
-<h3>Model: @params.modelFilename</h3>
-<pre class="brush: scala">
-@params.modelSrc
-</pre>
-
-<br/>
-}
- 
 
 <script type="text/javascript">
      SyntaxHighlighter.all()
