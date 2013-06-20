@@ -32,6 +32,10 @@
             border-color: red;
         }
         
+        .header{
+            text-align:center;
+             font-weight:bold;
+        }
         
         .globalError {
             background-color: red; color: white; font-weight: bold;
@@ -56,17 +60,17 @@
        A custom FieldConstructor is used to render the input element, so that the
         label and error are not rendered with the input elememnt.
      </li>
+     <li> When the form is submitted due to change of "no of entries", the old entries are retained.
+     </li>
   </ul>
  
  
     The source code of this demo is
      <a href="@controllers.routes.Source.show("technique.Sum")"
                                target="_blank">here</a>.
-    
-   
-    <br/>   <br/>
+       
+    <br/>   <br/>  
 
- 
    @if(beanForm.hasErrors) {
         <div class="globalError">
               @Messages(beanForm.errors(0).message, beanForm.errors(0).args)
@@ -89,18 +93,23 @@
                   '_label->"No of entries", 
                                   '_showConstraints->false, 'class->"noOfEntries")
          
-        <table>
+        <table border="1">
             <tr>
-           
-               <!--  Use a custom FieldConstructor to display the input element only. -->
-              <td>
-             @helper.repeat(beanForm("entries"), min=beanForm("noOfEntries").value.get.toInt) { entry =>
-
-                   @views.html.form.simpleInputText(entry,'_showErrors->false)  }
-              </td>
-            
-            
-            
+                  <td> &nbsp;</td>
+                  @for( i <- (1 to beanForm("noOfEntries").value.get.toInt)){
+                    <td class="header"> @i </td>
+                  
+                  }
+            </tr>
+            <tr>
+              <td class="header"> Number </td>
+                      
+                 @helper.repeat(beanForm("entries"), min=beanForm("noOfEntries").value.get.toInt) { entry =>
+                    <!--  Use a custom FieldConstructor to display the input element only. -->  
+                    <td> @views.html.form.simpleInputText(entry,'_showErrors->false) </td>  
+                   }
+             
+                        
             </tr>
         </table>
        <input type="submit" name="action" value="Change" id="change" style="display:none"/>

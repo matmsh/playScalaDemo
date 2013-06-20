@@ -10,7 +10,7 @@ import play.api.templates.Html
 
 object Sum extends Controller {
 
-  case class InputBean(noOfEntries: Int, entries: List[Int])
+  case class InputBean(noOfEntries:Int, entries: List[Int])
 
   lazy val inputForm = Form(
     mapping(
@@ -87,7 +87,7 @@ object Sum extends Controller {
 
   /**
    *  Return a filter that will retains keys like entries[i] where i <= noOfEntries and
-   *  key does not starts with "entries".
+   *  key does not start with "entries".
    */
   private def getFilter(noOfEntries: Int) = {
     val retainEntries = (0 to noOfEntries - 1).map(i => "entries[" + i + "]")
