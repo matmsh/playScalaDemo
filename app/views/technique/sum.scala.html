@@ -1,0 +1,117 @@
+@(beanForm:Form[controllers.technique.Sum.InputBean])(implicit flash:Flash)
+
+
+<!--   Make simpleFieldConstructor available  -->
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(views.html.helper.simpleFieldConstructor.render) }
+
+<html>
+<head>
+<title>Sum Demo</title>
+ <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+  <script>
+    $(document).ready(function(){
+       $("#noOfEntries").change(function(){
+       $('input[type=submit]#change').click();
+    });
+   });
+  </script>
+
+<style>
+        label{
+            color: blue;
+            font-weight:bold;
+        } 
+      
+        .noOfEntries{
+           width:5em;
+         }
+      
+        .p_error {
+            color: red;
+            border-color: red;
+        }
+        
+        
+        .globalError {
+            background-color: red; color: white; font-weight: bold;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+<h1>Sum Demo</h1>
+
+  This demo sums up to 5 integers. 
+  <ul>
+     <li> The form could be submitted via a change in the "no of entries" dropdown list, or
+      clicking the Sum button.
+    </li>
+    <li>
+          Each entry must be between -10 and 10 inclusively.
+     </li>
+     <li>
+       A custom FieldConstructor is used to render the input element, so that the
+        label and error are not rendered with the input elememnt.
+     </li>
+  </ul>
+ 
+ 
+    The source code of this demo is
+     <a href="@controllers.routes.Source.show("technique.Sum")"
+                               target="_blank">here</a>.
+    
+   
+    <br/>   <br/>
+
+ 
+   @if(beanForm.hasErrors) {
+        <div class="globalError">
+              @Messages(beanForm.errors(0).message, beanForm.errors(0).args)
+        
+        </div>
+    } else {
+      @beanForm.globalError.map { error =>
+               <div class="globalError">@Messages(error.message, error.args)</div>
+        } 
+    }
+    <br/>
+    
+    @helper.form(action=controllers.technique.routes.Sum.process,'autocomplete->"off"  ){
+    
+         <!--  A custom template to render the label -->
+         @views.html.form.label(beanForm("noOfEntries"), '_label->"No of Entries" )
+              
+         @helper.select(beanForm("noOfEntries"), 
+                      (1 to 5).map( x => ( x.toString, x.toString)),
+                  '_label->"No of entries", 
+                                  '_showConstraints->false, 'class->"noOfEntries")
+         
+        <table>
+            <tr>
+           
+               <!--  Use a custom FieldConstructor to display the input element only. -->
+              <td>
+             @helper.repeat(beanForm("entries"), min=beanForm("noOfEntries").value.get.toInt) { entry =>
+
+                   @views.html.form.simpleInputText(entry,'_showErrors->false)  }
+              </td>
+            
+            
+            
+            </tr>
+        </table>
+       <input type="submit" name="action" value="Change" id="change" style="display:none"/>
+       <input type="submit" name="action" value="Sum" />
+    }
+
+   
+   
+   
+   @if(flash.get("sum").isDefined) {
+   <hr/>
+     You have input: @beanForm.get.entries.mkString(",") <br/>
+     The sum is @flash.get("sum") .
+   }  
