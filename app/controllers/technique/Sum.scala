@@ -5,7 +5,6 @@ import play.api.data.Form
 import play.api.data.Forms._
 import play.api.mvc._
 import play.Logger
-import play.mvc.Results.Todo
 import play.api.templates.Html
 
 object Sum extends Controller {
