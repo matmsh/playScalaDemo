@@ -18,11 +18,11 @@ object DataTablesDemo2 extends Controller {
       //val filter = request.getQueryString("sSearch")
 
       // Might able to use Mapping.
-      val pageSize = request.getQueryString("iDisplayLength").get.toInt
-
-      val page = request.getQueryString("iDisplayStart").get.toInt / pageSize
-      val order = request.getQueryString("sSortDir_0").get
-      val sortCol = request.getQueryString("iSortCol_0").get.toInt
+      val pageSize:Int = request.getQueryString("iDisplayLength").getOrElse("10").toInt
+      
+      val page = request.getQueryString("iDisplayStart").getOrElse("1").toInt  / pageSize
+      val order = request.getQueryString("sSortDir_0").getOrElse("asc")
+      val sortCol = request.getQueryString("iSortCol_0").getOrElse("1").toInt
       val sEcho = request.getQueryString("sEcho")
 
       val asc = (order == "asc")
