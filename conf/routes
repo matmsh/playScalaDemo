@@ -32,6 +32,9 @@ POST   /form/SimpleFieldConstructorDemo/submit   controllers.form.SimpleFieldCon
 GET    /technique/sum/show                       controllers.technique.Sum.show
 POST   /technique/sum/process                    controllers.technique.Sum.process
 
+GET    /technique/jFreeChartDemo/show         controllers.technique.JFreeChartDemo.show
+GET    /technique/jFreeChartDemo/chart        controllers.technique.JFreeChartDemo.chart
+
 
 GET    /widgets/dataTablesDemo1/show             controllers.widgets.DataTablesDemo1.show
 GET    /widgets/dataTablesDemo2/show             controllers.widgets.DataTablesDemo2.show

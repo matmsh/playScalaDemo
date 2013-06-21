@@ -10,8 +10,8 @@ object ApplicationBuild extends Build {
 
   val appDependencies = Seq(
     // Add your project dependencies here,
-    "com.github.play2war.ext" %% "redirect-playlogger" % "1.0.1" 
-
+    "com.github.play2war.ext" %% "redirect-playlogger" % "1.0.1",
+    "jfreechart" % "jfreechart" % "1.0.0"
       
   )
 
