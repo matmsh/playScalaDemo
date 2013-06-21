@@ -7,30 +7,33 @@ import play.api.Play.current
 import scala.collection.mutable.ListBuffer
 import play.Logger
 import views.html.defaultpages.badRequest
+import play.api.libs.iteratee.Enumerator
 
 object Source extends Controller {
 
   case class Display(title: String, content: String, brush: String)
-  
- 
+
   /**
-   * Serve given filename. 
+   * Serve given filename.
    */
-  def file(filename:String) = Action {
+  def file(filename: String) = Action {
     import play.api.Play.current
 
-    val urlOption = Play.resource(filename)
-    
-    urlOption match {
-      case None => BadRequest(filename + " not found") 
-      case Some(url)  => Ok.sendFile(new java.io.File(url.getFile()), inline =true)
+    try {
+      val inputStream = Play.classloader.getResourceAsStream(filename)
+      val fileContent: Enumerator[Array[Byte]] = play.api.libs.iteratee.Enumerator.fromStream(inputStream)
+
+      SimpleResult(
+        header = ResponseHeader(200),
+        body = fileContent)
+
+    } catch {
+      case e: Exception =>
+        BadRequest("problem reading " + filename + ". \n" + e.getMessage)
     }
-    
-    
+
   }
 
-  
-  
   /**
    *  key should be the short name of a controller object.
    */
@@ -59,14 +62,13 @@ object Source extends Controller {
     modelOption.foreach(m => displays += Display("Model:" + m, modelSrc, "scala"))
 
     val extraTemplates = getExtractTemplates(key)
-   
-    extraTemplates.foreach(templateName => 
-      displays += Display(templateName, getFileAsStr(templateName), "xml")
-    )
+
+    extraTemplates.foreach(templateName =>
+      displays += Display(templateName, getFileAsStr(templateName), "xml"))
 
     val textFiles = getTextFilenames(key)
     Logger.info("textFiles=" + textFiles)
-  
+
     Ok(views.html.source(title, displays.toList, textFiles))
   }
 
@@ -94,8 +96,7 @@ object Source extends Controller {
     else List()
   }
 
-  
-   /**
+  /**
    * Get text file names, if there is any.
    */
   private def getTextFilenames(key: String): List[String] = {
@@ -104,7 +105,5 @@ object Source extends Controller {
       filenames.split(",").toList
     else List()
   }
-  
-  
-  
+
 }
