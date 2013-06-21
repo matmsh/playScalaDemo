@@ -5,7 +5,9 @@
 # Home page
 GET    /                                         controllers.Application.index
 
-GET    /source/show/:key                         controllers.Source.show(key:String)               
+GET    /source/show/:key                         controllers.Source.show(key:String)      
+         
+GET    /source/file/:filename                    controllers.Source.file(filename:String)  
 
 GET    /form/Demo1/show                          controllers.form.Demo1.show
 POST   /form/Demo1/submit                        controllers.form.Demo1.submit
@@ -32,8 +34,8 @@ POST   /form/SimpleFieldConstructorDemo/submit   controllers.form.SimpleFieldCon
 GET    /technique/sum/show                       controllers.technique.Sum.show
 POST   /technique/sum/process                    controllers.technique.Sum.process
 
-GET    /technique/jFreeChartDemo/show         controllers.technique.JFreeChartDemo.show
-GET    /technique/jFreeChartDemo/chart        controllers.technique.JFreeChartDemo.chart
+GET    /technique/jFreeChartDemo/show            controllers.technique.JFreeChartDemo.show
+GET    /technique/jFreeChartDemo/chart           controllers.technique.JFreeChartDemo.chart
 
 
 GET    /widgets/dataTablesDemo1/show             controllers.widgets.DataTablesDemo1.show

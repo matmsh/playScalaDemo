@@ -5,15 +5,32 @@ import play.api.mvc._
 import play.api.Play.current
 import play.api.Play.current
 import scala.collection.mutable.ListBuffer
+import play.Logger
+import views.html.defaultpages.badRequest
 
 object Source extends Controller {
 
   case class Display(title: String, content: String, brush: String)
-  //  case class Parameters(title:String,routes:String, messages:String,
-  //                 controllerSrc:String,controllerFilename:String,
-  //                 viewSrc:String, viewFilename:String,
-  //                 modelSrc:String,modelFilename:String)
+  
+ 
+  /**
+   * Serve given filename. 
+   */
+  def file(filename:String) = Action {
+    import play.api.Play.current
 
+    val urlOption = Play.resource(filename)
+    
+    urlOption match {
+      case None => BadRequest(filename + " not found") 
+      case Some(url)  => Ok.sendFile(new java.io.File(url.getFile()), inline =true)
+    }
+    
+    
+  }
+
+  
+  
   /**
    *  key should be the short name of a controller object.
    */
@@ -47,8 +64,10 @@ object Source extends Controller {
       displays += Display(templateName, getFileAsStr(templateName), "xml")
     )
 
+    val textFiles = getTextFilenames(key)
+    Logger.info("textFiles=" + textFiles)
   
-    Ok(views.html.source(title, displays.toList))
+    Ok(views.html.source(title, displays.toList, textFiles))
   }
 
   private def getFileAsStr(filename: String, filterFn: String => Boolean = (_ => true)): String = {
@@ -75,4 +94,17 @@ object Source extends Controller {
     else List()
   }
 
+  
+   /**
+   * Get text file names, if there is any.
+   */
+  private def getTextFilenames(key: String): List[String] = {
+    val filenames = current.configuration.getString(key + ".textFiles").getOrElse("")
+    if (filenames.nonEmpty)
+      filenames.split(",").toList
+    else List()
+  }
+  
+  
+  
 }

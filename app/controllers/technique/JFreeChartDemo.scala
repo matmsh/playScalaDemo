@@ -21,6 +21,7 @@ object JFreeChartDemo extends Controller {
     implicit request =>
       Ok(views.html.technique.jFreeChartDemo()))
 
+      
   def chart = Action {
 
     val MimeType = "image/jpeg"

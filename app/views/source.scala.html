@@ -1,4 +1,4 @@
-@(title:String,displays:List[controllers.Source.Display])
+@(title:String,displays:List[controllers.Source.Display],files:List[String]=List())
 
 <html>
 <head>
@@ -33,6 +33,9 @@ body {
     font-size:13px;
 }
 
+.title{
+   font-weight:bold;font-size:16px
+}
 
 .syntaxhighlighter .line.alt1 {
     background-color: #F8F8F8 !important;
@@ -45,6 +48,12 @@ body {
 <body>
 
 	<h1>Source code for @title</h1>
+
+@for(file<- files ){
+   <span class="title">File :</span> <a href="@controllers.routes.Source.file(file)" target="_blank">@file</a>
+  <br/>
+}
+
 
 
 @for( display <- displays){
