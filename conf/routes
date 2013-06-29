@@ -36,8 +36,12 @@ GET    /form/SimpleFieldConstructorDemo/show     controllers.form.SimpleFieldCon
 POST   /form/SimpleFieldConstructorDemo/submit   controllers.form.SimpleFieldConstructorDemo.submit
 
 
+GET    /technique/dynamicSelect/show             controllers.technique.DynamicSelect.show
+POST   /technique/dynamicSelect/submit           controllers.technique.DynamicSelect.submit
+
 GET    /technique/sum/show                       controllers.technique.Sum.show
 POST   /technique/sum/process                    controllers.technique.Sum.process
+
 
 GET    /technique/jFreeChartDemo/show            controllers.technique.JFreeChartDemo.show
 GET    /technique/jFreeChartDemo/chart           controllers.technique.JFreeChartDemo.chart
