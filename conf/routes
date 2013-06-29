@@ -9,6 +9,11 @@ GET    /source/show/:key                         controllers.Source.show(key:Str
          
 GET    /source/file/:filename                    controllers.Source.file(filename:String)  
 
+
+GET    /ajax/stockwatcher                        controllers.ajax.Stockwatcher.show
+POST   /ajax/stockwatcher/getPrices              controllers.ajax.Stockwatcher.getPrices
+
+
 GET    /form/Demo1/show                          controllers.form.Demo1.show
 POST   /form/Demo1/submit                        controllers.form.Demo1.submit
 GET    /form/Demo2/show                          controllers.form.Demo2.show
