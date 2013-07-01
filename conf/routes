@@ -47,6 +47,10 @@ GET    /technique/jFreeChartDemo/show            controllers.technique.JFreeChar
 GET    /technique/jFreeChartDemo/chart           controllers.technique.JFreeChartDemo.chart
 
 
+GET    /technique/dynamicSelectAjax/show            controllers.technique.DynamicSelectAjax.show
+POST   /technique/dynamicSelectAjax/submit          controllers.technique.DynamicSelectAjax.submit
+POST   /technique/dynamicSelectAjax/getChildModel   controllers.technique.DynamicSelectAjax.getChildModel
+
 GET    /widgets/dataTablesDemo1/show             controllers.widgets.DataTablesDemo1.show
 GET    /widgets/dataTablesDemo2/show             controllers.widgets.DataTablesDemo2.show
 GET    /widgets/dataTablesDemo2/load             controllers.widgets.DataTablesDemo2.load
